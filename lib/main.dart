@@ -42,16 +42,14 @@ class _WebViewAppState extends State<WebViewApp> {
           }
         },
         child: SafeArea(
-            child: WebViewWidget(
-          controller: controller,
-        )));
+            child: Scaffold(body: WebViewWidget(controller: controller))));
   }
 }
 
 //WillPopScope içerisinde .goBack olasılıgı yoksa çıkış uyarısı göstermek
 Future<bool> _onWillPop(var context) async {
   return (await showDialog(
-          context: context, //Burası bi elden geçecek.
+          context: context,
           builder: (BuildContext context) {
             return AlertDialog(
                 title: const Text('Çıkış'),
@@ -60,13 +58,13 @@ Future<bool> _onWillPop(var context) async {
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).pop(false);
-                    }, //<-- SEE HERE
+                    },
                     child: const Text('Hayır'),
                   ),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).pop(true);
-                    }, //<-- SEE HERE
+                    },
                     child: const Text('Evet'),
                   ),
                 ]);
