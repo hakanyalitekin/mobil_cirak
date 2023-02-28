@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mobil_cirak/home.dart';
+import 'package:mobil_cirak/service.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       home: const WebViewApp(),
+      // home: Home(),
     ),
   );
 }
@@ -19,10 +23,13 @@ class WebViewApp extends StatefulWidget {
 
 class _WebViewAppState extends State<WebViewApp> {
   late final WebViewController controller;
+  final _service = FirebaseNotificationService();
 
   @override
   void initState() {
     super.initState();
+    // _service.connectNotification();
+
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(

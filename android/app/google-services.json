@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "860061359183",
+    "project_id": "fir-mobile-cirak",
+    "storage_bucket": "fir-mobile-cirak.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860061359183:android:aac3b40f89fe1199d81e3a",
+        "android_client_info": {
+          "package_name": "com.example.mobil_cirak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860061359183-3bgqg8gt6k30bqv0te3abtu4ghovgvmg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQzd9a9h5kHgUEBVBVopY1fBszV2VucTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860061359183-3bgqg8gt6k30bqv0te3abtu4ghovgvmg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
