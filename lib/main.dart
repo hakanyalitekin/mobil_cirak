@@ -28,7 +28,7 @@ class _WebViewAppState extends State<WebViewApp> {
   @override
   void initState() {
     super.initState();
-    // _service.connectNotification();
+    _service.connectNotification();
 
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)

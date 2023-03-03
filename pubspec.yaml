@@ -22,7 +22,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/logo.png"
+  image_path: "assets/images/logo2.png"
   flutter_test:
     sdk: flutter
 
@@ -31,4 +31,4 @@ flutter_icons:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/logo.png
+    - assets/images/logo2.png
