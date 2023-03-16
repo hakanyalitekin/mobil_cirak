@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:mobil_cirak/home.dart';
-import 'package:mobil_cirak/service.dart';
+import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
+  //Region - Potrait Sabitleme
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value) => runApp(
+        MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(useMaterial3: true),
+          home: const WebViewApp(),
+          // home: Home(),
+        ),
+      ));
+  //Enregion - Potrait Sabitleme
+
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       home: const WebViewApp(),
-      // home: Home(),
     ),
   );
 }
@@ -23,15 +36,16 @@ class WebViewApp extends StatefulWidget {
 
 class _WebViewAppState extends State<WebViewApp> {
   late final WebViewController controller;
-  final _service = FirebaseNotificationService();
+  // final _service = FirebaseNotificationService();  // Notification Servisi
 
   @override
   void initState() {
     super.initState();
-    _service.connectNotification();
+    // _service.connectNotification();  // Notification Servisi
 
     controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..enableZoom(false) // Webview zoom disable
+      ..setJavaScriptMode(JavaScriptMode.unrestricted) // JS open
       ..loadRequest(
         Uri.parse('https://mobilcirak.com/firmalar'),
       );

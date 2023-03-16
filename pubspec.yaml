@@ -32,3 +32,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/logo2.png
+  # NOT: Eğer logo değiştirilecekse bu kod terminalde çalıştırılmalıdır -> "flutter pub run flutter_launcher_icons:main -f pubspec.yaml"
