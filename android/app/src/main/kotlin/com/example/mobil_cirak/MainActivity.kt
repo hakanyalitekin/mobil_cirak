@@ -1,4 +1,4 @@
-package com.example.mobil_cirak
+package com.okeles.mobil_cirak
 
 import io.flutter.embedding.android.FlutterActivity
 
