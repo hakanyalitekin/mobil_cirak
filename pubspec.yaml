@@ -22,7 +22,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/logo2.png"
+  image_path: "assets/images/logo.png"
   flutter_test:
     sdk: flutter
 
@@ -31,5 +31,5 @@ flutter_icons:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/logo2.png
+    - assets/images/logo.png
   # NOT: Eğer logo değiştirilecekse bu kod terminalde çalıştırılmalıdır -> "flutter pub run flutter_launcher_icons:main -f pubspec.yaml"
