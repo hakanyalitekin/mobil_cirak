@@ -55,7 +55,14 @@ class _WebViewAppState extends State<WebViewApp> {
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () async {
-          if (await controller.canGoBack()) {
+          final String isOpenDrawer = await controller.runJavaScriptReturningResult(
+                  "document.getElementById('_drawerCloseHiddenForMobile').value")
+              as String;
+          if (isOpenDrawer == '"1"') {
+            await controller.runJavaScript(
+                '[].forEach.call(document.getElementsByClassName("closeButton"), function (el) {el.click()});');
+            return false;
+          } else if (await controller.canGoBack()) {
             await controller.goBack();
             return false;
           } else {
