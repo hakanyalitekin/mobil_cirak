@@ -1,7 +1,8 @@
 name: mobil_cirak
 description: A new Flutter project.
 
-version: 1.0.0+1
+# Sürüm buradan artıyor.
+version: 1.0.1+2
 
 environment:
   sdk: ">=2.19.2 <3.0.0"
