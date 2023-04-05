@@ -34,7 +34,7 @@ class WebViewApp extends StatefulWidget {
   State<WebViewApp> createState() => _WebViewAppState();
 }
 
-class _WebViewAppState extends State<WebViewApp> {
+class _WebViewAppState extends State<WebViewApp> with WidgetsBindingObserver {
   late final WebViewController controller;
   // final _service = FirebaseNotificationService();  // Notification Servisi
 
@@ -42,13 +42,29 @@ class _WebViewAppState extends State<WebViewApp> {
   void initState() {
     super.initState();
     // _service.connectNotification();  // Notification Servisi
-
+    WidgetsBinding.instance.addObserver(this);
     controller = WebViewController()
       ..enableZoom(false) // Webview zoom disable
       ..setJavaScriptMode(JavaScriptMode.unrestricted) // JS open
       ..loadRequest(
         Uri.parse('https://mobilcirak.com/firmalar'),
       );
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      controller.reload();
+    }
+    if (state == AppLifecycleState.paused) {
+      print("HAKAN durdu");
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   @override
